@@ -47,7 +47,7 @@ print "Player 1 has WON!!!!!\n";
 
 
 sub verify_entry {
-# check array for win condition                                                                                                                                                     
+# check that input is valid and move is valid                                                                                                                                              
     my $flag = 1;
     while ($flag eq 1) {
         unless ($choice =~ /^[1-9,.E]$/ ) {
