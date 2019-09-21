@@ -44,20 +44,27 @@ go_x($choice);
 print_board();
 print "Player 1 has WON!!!!!\n";
 
+
+
 sub verify_entry {
-# check array for win condition
+# check array for win condition                                                                                                                                                     
     my $flag = 1;
     while ($flag eq 1) {
-	unless ($choice =~ /^[1-9,.E]$/ ) {
-	    print "Not a single number. Try again. I believe in you!\n";
-	    $choice = <STDIN>;
-	    chomp $choice;
-	} else {
-	    $flag = 0;
-	}
+        unless ($choice =~ /^[1-9,.E]$/ ) {
+            print "Not a single number. Try again. I believe in you!\n";
+            $choice = <STDIN>;
+            chomp $choice;
+        } else {
+            if (@board[$choice - 1] eq 'X' || @board[$choice - 1] eq 'O') {
+                print "That space is already taken - do it right and try again.\n";
+                $choice = <STDIN>;
+                chomp $choice;
+                verify_entry();
+            }
+            $flag = 0;
+        }
     }
 }
-	
 
 sub go_o {
 # place marker for O
