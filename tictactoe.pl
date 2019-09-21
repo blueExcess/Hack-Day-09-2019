@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # Basic Tic-Tac-Toe for Holberton Hack-Day #1
-# Pre-Alpha - still implementing verification and main loop. Don't look at me.
+# Pre-Alpha - still need to implement main loop. Don't look at me.
 
 use strict;
 use warnings;
